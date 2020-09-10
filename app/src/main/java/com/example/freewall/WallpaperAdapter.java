@@ -1,6 +1,7 @@
 package com.example.freewall;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
   private Context mContext;
   private ArrayList<WallpaperItem> mData;
 
+
   public WallpaperAdapter(Context mContext, ArrayList<WallpaperItem> mData) {
     this.mContext = mContext;
     this.mData = mData;
@@ -33,11 +35,12 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
     LayoutInflater mInflater = LayoutInflater.from(mContext);
     view = mInflater.inflate(R.layout.item_wallpaper, parent, false);
     return new WallpaperViewHolder(view);
+
   }
 
   @Override
   public void onBindViewHolder(@NonNull WallpaperViewHolder holder, int position) {
-    Picasso.get().load("https://free-wall-paper.herokuapp.com/"+mData.get(position).getImageUrl()).into(holder.image);
+    Picasso.get().load("https://free-wall-paper.herokuapp.com/"+mData.get(position).getImageUrl()).into(holder.imageView);
   }
 
   @Override
@@ -46,10 +49,12 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
   }
 
   public static class WallpaperViewHolder extends RecyclerView.ViewHolder {
-    ImageView image;
+    ImageView imageView;
+    View cardView;
     public WallpaperViewHolder(@NonNull View itemView) {
       super(itemView);
-      image = itemView.findViewById(R.id.textview_image);
+      imageView = itemView.findViewById(R.id.image_view_wallpaper);
+      cardView = itemView.findViewById(R.id.card_view_wallpaper);
     }
   }
 }

@@ -5,6 +5,7 @@
   android:layout_height="220dp"
   android:clickable="true"
   android:focusable="true"
+  android:id="@+id/card_view_wallpaper"
   app:cardCornerRadius="0dp"
   android:foreground="?android:attr/selectableItemBackground">
 
@@ -15,11 +16,11 @@
     android:orientation="vertical">
 
     <ImageView
-      android:id="@+id/textview_image"
+      android:id="@+id/image_view_wallpaper"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:background="#4d4d4d"
-      android:layout_margin="1dp"
+      android:layout_margin="0.3dp"
       android:contentDescription="Wallpaper Image"
       android:scaleType="centerCrop"
       android:src="@drawable/ic_launcher_foreground" />

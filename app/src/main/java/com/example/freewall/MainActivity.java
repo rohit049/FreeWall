@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
   RequestQueue mRequestQueue;
   final String URL = "https://free-wall-paper.herokuapp.com/api/v1/walls";
   private static final String TAG = ".MainActivity";
-  //  TextView textView;
+//  TextView textView;
   ArrayList<WallpaperItem> wallpapers;
 
   @Override
@@ -46,10 +46,9 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onResponse(JSONObject response) {
         try {
-
           JSONArray walls = response.getJSONObject("data").getJSONArray("walls");
 
-          for (int i = 0; i < walls.length(); i++) {
+          for (int i=0; i < walls.length(); i++) {
             JSONObject wall = walls.getJSONObject(i);
             WallpaperItem wallpaperItem = new WallpaperItem(
                 wall.getString("name"),

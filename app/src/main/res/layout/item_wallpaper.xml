@@ -2,12 +2,12 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
-  android:layout_height="220dp"
+  android:layout_height="190dp"
   android:clickable="true"
   android:focusable="true"
-  android:id="@+id/card_view_wallpaper"
-  app:cardCornerRadius="0dp"
-  android:foreground="?android:attr/selectableItemBackground">
+  android:layout_margin="1.5dp"
+  android:foreground="?android:attr/selectableItemBackground"
+  app:cardCornerRadius="7dp">
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -19,9 +19,8 @@
       android:id="@+id/image_view_wallpaper"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:background="#4d4d4d"
-      android:layout_margin="0.3dp"
-      android:contentDescription="Wallpaper Image"
+      android:background="@color/colorSecondaryText"
+      android:contentDescription="@string/wall_img"
       android:scaleType="centerCrop"
       android:src="@drawable/ic_launcher_foreground" />
 

@@ -95,8 +95,13 @@ public class MainActivity extends AppCompatActivity implements WallpaperAdapter.
   public void onWallClick(int position) {
     Log.d(TAG, "onWallClick: " + position);
     Intent intent = new Intent(this, ShowWallpaperActivity.class);
+    ArrayList<String> urls = new ArrayList<>();
 
-    intent.putExtra("selected_wallpaper", mWallpapers.get(position));
+    for (int i=0; i < mWallpaperAdapter.getItemCount(); i++) {
+      urls.add(mWallpapers.get(i).getImageUrl());
+    }
+    intent.putExtra("urls", urls);
+    intent.putExtra("selected_wallpaper", position);
     startActivity(intent);
   }
 }

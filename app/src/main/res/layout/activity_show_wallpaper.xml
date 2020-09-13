@@ -6,19 +6,9 @@
   android:layout_height="match_parent"
   tools:context=".ShowWallpaperActivity">
 
-  <androidx.core.widget.NestedScrollView
+  <androidx.viewpager.widget.ViewPager
+    android:id="@+id/view_pager"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#000">
+    android:layout_height="match_parent" />
 
-    <ImageView
-      android:id="@+id/image_view_show_wallpaper"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:adjustViewBounds="true"
-      android:background="#303030"
-      android:scaleType="centerCrop"
-      android:src="@drawable/ic_launcher_foreground" />
-
-  </androidx.core.widget.NestedScrollView>
 </LinearLayout>

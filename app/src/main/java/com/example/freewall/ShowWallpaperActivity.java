@@ -1,15 +1,12 @@
 package com.example.freewall;
 
+import android.os.Bundle;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.ImageView;
-
 import com.example.freewall.adapters.WallpaperViewPagerAdapter;
-import com.example.freewall.models.WallpaperItem;
-import com.squareup.picasso.Picasso;
 
 public class ShowWallpaperActivity extends AppCompatActivity {
   private static final String TAG = "ShowWallpaperActivity";
@@ -30,6 +27,18 @@ public class ShowWallpaperActivity extends AppCompatActivity {
       viewPager.setCurrentItem(getIntent().getIntExtra("selected_wallpaper", 0));
     }
 
+
+//    imageView = findViewById(R.id.image_view_show_wallpaper);
+//    if (getIntent().hasExtra("selected_wallpaper")) {
+//      WallpaperItem wallpaperItem = getIntent().getParcelableExtra("selected_wallpaper");
+//      assert wallpaperItem != null;
+//      Picasso
+//        .get()
+//        .load("https://free-wall-paper.herokuapp.com/" + wallpaperItem.getImageUrl())
+//        .into(imageView);
+//
+//      Log.d(TAG, "onCreate: " + wallpaperItem.getName());
+//    }
 
   }
 }

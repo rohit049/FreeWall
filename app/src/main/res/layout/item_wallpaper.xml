@@ -3,17 +3,18 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
   android:layout_height="190dp"
+  android:layout_margin="1.5dp"
   android:clickable="true"
   android:focusable="true"
-  android:layout_margin="1.5dp"
   android:foreground="?android:attr/selectableItemBackground"
   app:cardCornerRadius="7dp">
 
-  <LinearLayout
+  <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
+
 
     <ImageView
       android:id="@+id/image_view_wallpaper"
@@ -24,7 +25,31 @@
       android:scaleType="centerCrop"
       android:src="@drawable/ic_launcher_foreground" />
 
-  </LinearLayout>
+    <TextView
+      android:id="@+id/text_view_likes"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#50000000"
+      android:paddingStart="0dp"
+      android:paddingEnd="5dp"
+      android:text="Likes text"
+      android:textAlignment="textEnd"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="12sp" />
+
+    <TextView
+      android:id="@+id/text_view_name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      android:background="#50000000"
+      android:padding="4dp"
+      android:text="Dummy text"
+      android:textColor="@color/colorPrimaryLight"
+      android:textSize="12sp" />
+
+
+  </FrameLayout>
 
 
 </androidx.cardview.widget.CardView>

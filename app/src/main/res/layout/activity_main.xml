@@ -20,16 +20,19 @@
       app:contentScrim="?attr/colorPrimary"
       app:layout_scrollFlags="scroll|enterAlways" />
 
+    <com.google.android.material.tabs.TabLayout
+      android:id="@+id/tabs"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
   </com.google.android.material.appbar.AppBarLayout>
 
-
-  <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerview"
+  <androidx.viewpager.widget.ViewPager
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryLight"
-    android:orientation="vertical"
+    android:id="@+id/container"
     app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
 
   <ProgressBar
     android:id="@+id/progress_bar"

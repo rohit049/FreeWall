@@ -1,9 +1,14 @@
 package com.example.freewall.adapters;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,10 +36,12 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
 
   @Override
   public void onBindViewHolder(@NonNull WallpaperViewHolder holder, int position) {
+    holder.textViewLikes.setText("Likes: " + mWallpapers.get(position).getLikes());
+    holder.textViewName.setText(mWallpapers.get(position).getName());
     Picasso
-        .get()
-        .load("https://free-wall-paper.herokuapp.com/" + mWallpapers.get(position).getImageUrl())
-        .into(holder.imageView);
+      .get()
+      .load("https://free-wall-paper.herokuapp.com/" + mWallpapers.get(position).getImageUrl())
+      .into(holder.imageView);
   }
 
   @Override
@@ -44,11 +51,17 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
 
   public static class WallpaperViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     ImageView imageView;
+    TextView textViewName;
+    TextView textViewLikes;
     OnWallListener onWallListener;
 
     public WallpaperViewHolder(@NonNull View itemView, OnWallListener onWallListener) {
       super(itemView);
       imageView = itemView.findViewById(R.id.image_view_wallpaper);
+      textViewName = itemView.findViewById(R.id.text_view_name);
+      textViewLikes = itemView.findViewById(R.id.text_view_likes);
+
+      imageView.setColorFilter(new PorterDuffColorFilter(Color.argb(45, 93, 64, 55), PorterDuff.Mode.DARKEN));
       this.onWallListener = onWallListener;
 
       itemView.setOnClickListener(this);
@@ -59,6 +72,7 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
       onWallListener.onWallClick(getAdapterPosition());
     }
   }
+
   public interface OnWallListener {
     void onWallClick(int position);
   }

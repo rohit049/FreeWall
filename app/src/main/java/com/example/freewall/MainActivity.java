@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     mSectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
     mSectionPageAdapter.addFragment(HomeFragment.getInstance(), "Home");
     mSectionPageAdapter.addFragment(TrendingFragment.getInstance(), "Trending");
-    mSectionPageAdapter.addFragment(CategoryFragment.getInstance(), "Category");
+    mSectionPageAdapter.addFragment(CategoryFragment.getInstance(), "Premium");
     viewPager.setAdapter(mSectionPageAdapter);
   }
 

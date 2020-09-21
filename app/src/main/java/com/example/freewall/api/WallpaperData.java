@@ -17,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class FetchData {
+public class WallpaperData {
 
   public interface TransactionComplete {
     void onNotifyAdapter();
@@ -29,12 +29,12 @@ public class FetchData {
   private static final String TAG = "FetchData";
   RequestQueue mRequestQueue;
   private WallpaperAdapter wallpaperAdapter;
-  private static FetchData uniqInstance;
+  private static WallpaperData uniqInstance;
 
 
-  public static FetchData getInstance() {
+  public static WallpaperData getInstance() {
     if (uniqInstance == null)
-      uniqInstance = new FetchData();
+      uniqInstance = new WallpaperData();
     return uniqInstance;
   }
 
@@ -64,6 +64,7 @@ public class FetchData {
 
     mRequestQueue.add(jsonObjectRequest);
   }
+  
 
   private void parseData(JSONObject object) {
     try {

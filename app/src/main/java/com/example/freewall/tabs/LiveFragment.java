@@ -19,13 +19,13 @@ import com.android.volley.toolbox.Volley;
 import com.example.freewall.R;
 import com.example.freewall.ShowWallpaperActivity;
 import com.example.freewall.adapters.WallpaperAdapter;
-import com.example.freewall.api.FetchData;
+import com.example.freewall.api.WallpaperData;
 import com.example.freewall.models.WallpaperItem;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class LiveFragment extends Fragment implements FetchData.TransactionComplete, WallpaperAdapter.OnWallListener {
+public class LiveFragment extends Fragment implements WallpaperData.TransactionComplete, WallpaperAdapter.OnWallListener {
   RequestQueue mRequestQueue;
   final String URL = "https://free-wall-paper.herokuapp.com/api/v1/walls?sort=-likes";
   private static final String TAG = ".MainActivity";
@@ -62,8 +62,8 @@ public class LiveFragment extends Fragment implements FetchData.TransactionCompl
     } else {
       initRecyclerView();
 
-      FetchData fetchData = new FetchData();
-      fetchData.onFetchData(URL, getContext(), getInstance());
+      WallpaperData wallpaperData = new WallpaperData();
+      wallpaperData.onFetchData(URL, getContext(), getInstance());
     }
   }
 

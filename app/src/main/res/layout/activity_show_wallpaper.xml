@@ -1,29 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-  android:id="@+id/view_pager"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="match_parent" />
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
-  <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-  <!--  xmlns:app="http://schemas.android.com/apk/res-auto"-->
-  <!--  xmlns:tools="http://schemas.android.com/tools"-->
-  <!--  android:layout_width="match_parent"-->
-  <!--  android:layout_height="match_parent"-->
-  <!--  tools:context=".ShowWallpaperActivity">-->
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true">
 
-  <!--  <androidx.core.widget.NestedScrollView-->
+    <androidx.viewpager.widget.ViewPager
+      android:id="@+id/view_pager"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+  </LinearLayout>
+
+  <!--  <Space-->
   <!--    android:layout_width="match_parent"-->
-  <!--    android:layout_height="match_parent"-->
-  <!--    android:background="#000">-->
+  <!--    android:layout_height="0dp"-->
+  <!--    android:layout_weight="1" />-->
 
-  <!--    <ImageView-->
-  <!--      android:id="@+id/image_view_show_wallpaper"-->
-  <!--      android:layout_width="match_parent"-->
-  <!--      android:layout_height="match_parent"-->
-  <!--      android:adjustViewBounds="true"-->
-  <!--      android:background="#303030"-->
-  <!--      android:scaleType="centerCrop"-->
-  <!--      android:src="@drawable/ic_launcher_foreground" />-->
+  <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_alignParentBottom="true">
 
-  <!--  </androidx.core.widget.NestedScrollView>-->
-  <!--</LinearLayout>-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab_download"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:clickable="true"
+      android:focusable="true"
+      android:src="@drawable/ic_download"
+      app:layout_anchor="@id/bar" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+      android:id="@+id/bar"
+      android:layout_width="match_parent"
+      android:layout_height="58dp"
+      android:layout_gravity="bottom"
+      android:backgroundTint="@color/colorPrimaryDark">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/btn_like"
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?android:attr/selectableItemBackground"
+          android:drawableTop="@drawable/ic_favorite"
+          android:gravity="center"
+          android:orientation="vertical"
+          android:text="Like"
+          android:textColor="#FFFFFF">
+
+        </TextView>
+
+
+        <TextView
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?android:attr/selectableItemBackground"
+          android:drawableTop="@drawable/ic_favorite"
+          android:gravity="center"
+          android:orientation="vertical"
+          android:textColor="#FFFFFF"
+          android:visibility="invisible">
+
+        </TextView>
+
+        <TextView
+          android:id="@+id/btn_set_wallpaper"
+          style="?android:attr/borderlessButtonStyle"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?android:attr/selectableItemBackground"
+          android:drawableTop="@drawable/ic_wallpaper"
+          android:gravity="center"
+          android:orientation="vertical"
+          android:text="Set"
+          android:textColor="#FFFFFF">
+
+        </TextView>
+      </LinearLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

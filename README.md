@@ -1,9 +1,11 @@
 # FreeWall
 Frontend Android App of FreeWall Gallery created as a part of college project
 
-To Clone directly into Android Studio:
-File - > new -> Project from Version control -> GitHub
+Open Visual Studio Code *terminal* (<kbd>Ctrl</kbd> + `` ` ``)
+Write the Git clone command. For example,
 
+`git clone https://github.com/angular/angular-phonecat.git`
+Open the folder you have just cloned (menu *File → Open Folder*)
 For cloning project from the terminal.
 
 Step 1: Click this button:

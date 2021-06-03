@@ -8,6 +8,8 @@ Write the Git clone command. For example,
 `git clone https://github.com/angular/angular-phonecat.git`
 
 Open the folder you have just cloned (menu *File → Open Folder*)
+
+
 For cloning project from the terminal.
 
 Step 1: Click this button:
@@ -16,4 +18,6 @@ Step 1: Click this button:
 
 Step 2: Copy the link.
 
-Step 3: Open the terminal, make sure you are in the folder where you want to clone the project. If you are not then just type: cd theDesiredFolderLocation. Next command: git clone copiedLinkPath.
+Step 3: Open the terminal, make sure you are in the folder where you want to clone the project. 
+If you are not then just type: cd theDesiredFolderLocation. 
+Next command: git clone copiedLinkPath.

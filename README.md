@@ -8,7 +8,7 @@ For cloning project from the terminal.
 
 Step 1: Click this button:
 
-["Clone or Download"]("https://i.stack.imgur.com/LqUA0m.png")
+![Clone or Download](https://i.stack.imgur.com/LqUA0m.png)
 
 Step 2: Copy the link.
 
